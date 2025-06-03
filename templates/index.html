@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sports System</h1>
+            <div class="space-x-4">
+                <a href="/teams" class="hover:underline">Teams</a>
+                <a href="/athletes" class="hover:underline">Athletes</a>
+                <a href="/coaches" class="hover:underline">Coaches</a>
+                <a href="/leagues" class="hover:underline">Leagues</a>
+                <a href="/matches" class="hover:underline">Matches</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 p-4">
+        <h2 class="text-3xl font-bold mb-6">Welcome to Sports System</h2>
+        <p class="text-gray-600 mb-4">Manage your teams, athletes, coaches, leagues, and matches efficiently.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Team Management</h3>
+                <p class="text-gray-600">Create and manage teams with their respective sports.</p>
+                <a href="/teams" class="mt-4 inline-block text-blue-600 hover:underline">Go to Teams</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Athlete Tracking</h3>
+                <p class="text-gray-600">Monitor athlete performance and health status.</p>
+                <a href="/athletes" class="mt-4 inline-block text-blue-600 hover:underline">Go to Athletes</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Match Results</h3>
+                <p class="text-gray-600">Record and analyze match outcomes.</p>
+                <a href="/matches" class="mt-4 inline-block text-blue-600 hover:underline">Go to Matches</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

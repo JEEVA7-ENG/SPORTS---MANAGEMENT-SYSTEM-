@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athletes - Sports System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Sports System</h1>
+            <div class="space-x-4">
+                <a href="/teams" class="hover:underline">Teams</a>
+                <a href="/athletes" class="hover:underline">Athletes</a>
+                <a href="/coaches" class="hover:underline">Coaches</a>
+                <a href="/leagues" class="hover:underline">Leagues</a>
+                <a href="/matches" class="hover:underline">Matches</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 p-4">
+        <h2 class="text-3xl font-bold mb-6">Athlete Management</h2>
+        
+        <!-- Add Athlete Form -->
+        <div class="bg-white p-6 rounded-lg shadow mb-6">
+            <h3 class="text-xl font-semibold mb-4">Add New Athlete</h3>
+            <form action="/add_athlete" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700">Athlete Name</label>
+                    <input type="text" name="name" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-gray-700">Team</label>
+                    <select name="team_id" required class="w-full p-2 border rounded">
+                        <option value="">Select Team</option>
+                        {% for team in teams %}
+                        <option value="{{ team[0] }}">{{ team[1] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Position</label>
+                    <input type="text" name="position" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-gray-700">Health Status</label>
+                    <input type="text" name="health_status" required class="w-full p-2 border rounded">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Athlete</button>
+            </form>
+        </div>
+
+        <!-- Athletes List -->
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-4">Athletes List</h3>
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2 text-left">Name</th>
+                        <th class="p-2 text-left">Team</th>
+                        <th class="p-2 text-left">Position</th>
+                        <th class="p-2 text-left">Health Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for athlete in athletes %}
+                    <tr class="border-b">
+                        <td class="p-2">{{ athlete[1] }}</td>
+                        <td class="p-2">{{ athlete[5] }}</td>
+                        <td class="p-2">{{ athlete[3] }}</td>
+                        <td class="p-2">{{ athlete[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
